@@ -2,11 +2,12 @@
 %%INITIALIZE ^~
 
 addpath('SupportingFiles/')
+% addpath('Net200')
 
 %Read data
-Nodes = load('SupportingFiles/Nodes.txt');
-Links = load('SupportingFiles/Links.txt');
-L = load('SupportingFiles/L.txt');
+Nodes = load('Net200/Nodes200.txt');
+Links = load('Net200/Links200.txt');
+L = load('Net200/L200.txt');
 
 %Get sizes of input data
 nNodes = size(Nodes,1);
@@ -24,7 +25,7 @@ n = 8;
 P = 30;
 q = 0.5;
 m = 3;
-t = 30;
+t = 60;
 
 [nodes,result] = Genetic(G,n,P,q,m,t);
 plotTopology(Nodes, Links, nodes);
@@ -61,7 +62,7 @@ end
 
 [index_best,result_best] = Best(Pop, G);
 s_best = Pop(:, index_best);
-
+count
 end
 
 %%%
